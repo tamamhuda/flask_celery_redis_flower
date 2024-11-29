@@ -21,7 +21,7 @@ Before you begin, ensure that the following are installed on your system:
   To install `uv`, use:
 
   ```bash
-  pip install uv
+  pipx install uv
 
 ## Clone Repository
 -
