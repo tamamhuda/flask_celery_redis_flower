@@ -22,9 +22,7 @@ def long_task(self, data):
     # Simulate work (replace with actual processing logic)
     for i in range(10):
         time.sleep(1)  # Simulating work
-        # print(f"Processing step {i+1}/10")
-    
- 
+
     # Task completed successfully
     return data
 
