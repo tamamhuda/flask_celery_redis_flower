@@ -34,6 +34,6 @@ Before you begin, ensure that the following are installed on your system:
 ## Run Docker Compose
 
   To run `docker compose`, use:
--
+
   ```bash
   docker compose up --build
