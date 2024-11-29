@@ -1,4 +1,4 @@
-# Flask, Celery, Redis, Flower, using Uv on Docker
+# Flask - Celery - Redis - Flower, using Uv on Docker
 
 This project demonstrates how to set up a **Flask** application with **Celery** for background task processing, **Redis** as the message broker, **Flower** for monitoring Celery tasks, and **`uv`** (a fast Python package manager written in Rust) for dependency management — all within a **Docker** containerized environment.
 
