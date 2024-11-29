@@ -1,0 +1,51 @@
+# version: "3.7"
+services:
+  server:
+    container_name: flask_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - CELERY_BROKER_URL=redis://redis/0
+      - CELERY_RESULT_BACKEND=redis://redis/0
+      - CONFIGURATION_SETUP=development
+    ports:
+      - "5001:5001"
+    depends_on:
+      - redis
+    volumes: [".:/app"]
+  worker:
+    container_name: flask_worker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["celery", "-A", "tasks", "worker", "-l", "INFO"]
+    # entrypoint: celery
+    environment:
+      - CELERY_BROKER_URL=redis://redis/0
+      - CELERY_RESULT_BACKEND=redis://redis/0
+      - CONFIGURATION_SETUP=development
+    depends_on:
+      - redis
+    volumes: [".:/app"]
+  monitor:
+    container_name: flask_monitor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5555:5555"
+    command: ["celery", "-A", "tasks", "flower"]
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    depends_on:
+      - redis
+      - worker
+    volumes: [".:/app"]
+  redis:
+    container_name: flask_redis
+    image: redis:alpine
+    ports:
+      - "6379:6379"
