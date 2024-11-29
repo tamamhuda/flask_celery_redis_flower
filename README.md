@@ -32,7 +32,7 @@ Before you begin, ensure that the following are installed on your system:
   cd flask_celery_redis_flower
 
 ## Run Docker Compose
-
+-
   To run `docker compose`, use:
 
   ```bash
