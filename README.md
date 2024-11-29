@@ -24,7 +24,16 @@ Before you begin, ensure that the following are installed on your system:
   pip install uv
 
 ## Clone Repository
-```bash
+-
+  ```bash
   git clone https://github.com/tamamhuda/flask_celery_redis_flower
+-
+  ```bash
   cd flask_celery_redis_flower
 
+## Run Docker Compose
+
+  To run `docker compose`, use:
+
+  ```bash
+  docker compose up --build
