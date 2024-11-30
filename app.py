@@ -2,7 +2,6 @@
 from flask import Flask
 from flask import jsonify, request
 from tasks import create_task, long_task, monitor_task
-import json
 dev_mode = True
 app = Flask(__name__)
 
