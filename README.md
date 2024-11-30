@@ -17,23 +17,26 @@ Before you begin, ensure that the following are installed on your system:
 
 - **Docker** and **Docker Compose**.
 - **`uv`** (optional but recommended for development), which is a fast Python package manager written in Rust.
-  
+
   To install `uv`, use:
 
   ```bash
-  pipx install uv
+  pip install uv
+  ```
 
 ## Clone Repository
--
-  ```bash
+
+- ```bash
   git clone https://github.com/tamamhuda/flask_celery_redis_flower
--
-  ```bash
+  ```
+- ```bash
   cd flask_celery_redis_flower
+  ```
 
 ## Run Docker Compose
--
-  To run `docker compose`, use:
+
+- To run `docker compose`, use:
 
   ```bash
   docker compose up --build
+  ```
